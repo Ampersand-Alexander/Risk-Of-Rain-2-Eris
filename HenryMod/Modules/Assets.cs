@@ -29,7 +29,7 @@ namespace HenryMod.Modules
         // CHANGE THIS
         private const string assetbundleName = "myassetbundle";
         //change this to your project's name if/when you've renamed it
-        private const string csProjName = "HenryMod";
+        private const string csProjName = "ErisMod";
         
         internal static void Initialize()
         {
