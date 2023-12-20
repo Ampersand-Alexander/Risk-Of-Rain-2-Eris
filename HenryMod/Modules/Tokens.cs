@@ -22,7 +22,7 @@ namespace ErisMod.Modules
             LanguageAPI.Add(prefix + "NAME", "Mad Sword King Eris");
             LanguageAPI.Add(prefix + "DESCRIPTION", desc);
             LanguageAPI.Add(prefix + "SUBTITLE", "'Intense, that was my first impression. All my senses are flashing danger signals again' -Rudeus");
-            LanguageAPI.Add(prefix + "LORE", "'As expected of Rudeus.'");
+            LanguageAPI.Add(prefix + "LORE", "For those of the Sword God Style, their motto is ｢Victory goes to he who moves first｣.[2] It is a style of swordsmanship that emphasizes speed and aggression, where the main focus is to strike down the opponent first.");
             LanguageAPI.Add(prefix + "OUTRO_FLAVOR", outro);
             LanguageAPI.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
@@ -32,34 +32,34 @@ namespace ErisMod.Modules
             #endregion
 
             #region Passive
-            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Mad Dog / Sword God Style: Long Sword of Light");
-            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Eris gets angry the more damaged she is. Her attacks will be faster and cooldowns will be lower. Additionally, the longer she is in combat, she gains stacks of rage allowing her to unleash Long Sword of Light Augmenting each of her abilities.");
+            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Sword God Style: Long Sword of Light");
+            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Additionally, the longer she is in combat, she gains stacks of rage allowing her to unleash Long Sword of Light Augmenting each of her abilities.");
             #endregion
 
             #region Primary
             LanguageAPI.Add(prefix + "PRIMARY_SLASH_NAME", "Nameless Sword");
-            LanguageAPI.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Helpers.agilePrefix + $"Slash for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>. If Long Sword of Light is active, her range is extended and she instead deals <style=cIsDamage>{200f * StaticValues.swordDamageCoefficient}% damage</style>");
+            LanguageAPI.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Helpers.agilePrefix + $"Slash for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>. If Long Sword of Light is active, her range is extended, her attack speed is capped but extra attack speed is instead converted to damage and she instead deals <style=cIsDamage>{200f * StaticValues.swordDamageCoefficient}% damage</style>");
             #endregion
 
             #region Secondary
             LanguageAPI.Add(prefix + "SECONDARY_GUN_NAME", "Sword God Style: Light Reversal");
-            LanguageAPI.Add(prefix + "SECONDARY_GUN_DESCRIPTION", Helpers.agilePrefix + $"Momentarily block. If Sword of Light is active, enemy attacks are stored during this time and at the end of the invincibility send out a long range cut of light at your cursors direction that deals more damage based on how much was stored up to <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_GUN_DESCRIPTION", Helpers.agilePrefix + $"Momentarily block If Sword of Light is not active charge Sword of Light. If Sword of Light is active, enemy attacks are stored during this time and at the end of the invincibility send out a long range cut of light at your cursors direction that deals more damage based on how much was stored up to <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Utility
             LanguageAPI.Add(prefix + "UTILITY_ROLL_NAME", "Sword God Style: Longsword of Silence");
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Launch yourself and swing your blade beyond the speed of sound a velocity beyond the speed of sound at a targeted enemy and appear behind them. Dealing <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% Damage <style=cIsDamage> Executing under 10% hp. If Sword of Light is active, Additionally mark them for death</style>");
+            LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Launch yourself and swing your blade beyond the speed of sound a velocity beyond the speed of sound at a targeted enemy and appear behind them. Dealing <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% Damage <style=cIsDamage> Executing under 10% hp. If Sword of Light is active, this ability applies Nameless Sword: Sword of Light damage and resets on kill</style>");
             #endregion
 
             #region Special
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_NAME", "Bomb");
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_DESCRIPTION", $"Throw a bomb for <style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SPECIAL_BOMB_NAME", "Mad Dog: Bloodlust");
+            LanguageAPI.Add(prefix + "SPECIAL_BOMB_DESCRIPTION", $"Temporarily Gain massively increased Attack speed, Move speed, and cooldown reduction. If Sword of light is active, instead of attack speed deal % max hp damage<style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Achievements
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "Henry: Mastery");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "As Henry, beat the game or obliterate on Monsoon.");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Henry: Mastery");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "???");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "???");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "???");
             #endregion
             #endregion
         }
