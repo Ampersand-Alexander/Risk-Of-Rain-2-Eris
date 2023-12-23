@@ -28,12 +28,12 @@ namespace ErisMod
         // if you don't change these you're giving permission to deprecate the mod-
         //  please change the names to your own stuff, thanks
         //   this shouldn't even have to be said
-        public const string MODUID = "com.rob.ErisMod";
+        public const string MODUID = "com.fullyascended.ErisMod";
         public const string MODNAME = "ErisMod";
         public const string MODVERSION = "1.0.0";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
-        public const string DEVELOPER_PREFIX = "FullyAscended";
+        public const string DEVELOPER_PREFIX = "FULLYASCENDED";
 
         public static ErisPlugin instance;
 
