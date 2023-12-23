@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="HenryBank.bnk" />
-    <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
+    <None Remove="ErisBank.bnk" />
+    <None Remove="Modules\Characters\Eris.cs~RF6221a098.TMP" />
     <None Remove="myassetbundle" />
   </ItemGroup>
 
@@ -29,7 +29,7 @@
 	</ItemGroup>
 	
   <ItemGroup>
-    <EmbeddedResource Include="HenryBank.bnk" />
+    <EmbeddedResource Include="ErisBank.bnk" />
     <EmbeddedResource Include="myassetbundle" />
   </ItemGroup>
 

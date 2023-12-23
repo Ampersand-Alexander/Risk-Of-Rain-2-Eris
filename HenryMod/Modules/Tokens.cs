@@ -8,7 +8,7 @@ namespace ErisMod.Modules
         internal static void AddTokens()
         {
             #region Eris
-            string prefix = HenryPlugin.DEVELOPER_PREFIX + "_ERIS_BODY_";
+            string prefix = ErisPlugin.DEVELOPER_PREFIX + "_ERIS_BODY_";
 
             string desc = "Eris was contemptuous, impulsive, defiant, and condescending. A short tempered women devoted to protect the protagonist against the Dragon God himself.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Sword is a good all-rounder while Boxing Gloves are better for laying a beatdown on more powerful foes." + Environment.NewLine + Environment.NewLine;

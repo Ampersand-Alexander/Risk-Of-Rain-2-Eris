@@ -12,17 +12,17 @@ namespace HenryMod.Modules.Survivors
     {
         //used when building your character using the prefabs you set up in unity
         //don't upload to thunderstore without changing this
-        public override string prefabBodyName => "Henry";
+        public override string prefabBodyName => "Eris";
 
-        public const string HENRY_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_";
+        public const string ERIS_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_ERIS_BODY_";
 
         //used when registering your survivor's language tokens
-        public override string survivorTokenPrefix => HENRY_PREFIX;
+        public override string survivorTokenPrefix => ERIS_PREFIX;
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            bodyName = "HenryTutorialBody",
-            bodyNameToken = HENRY_PREFIX + "NAME",
+            bodyName = "Eris",
+            bodyNameToken = ERIS_PREFIX + "NAME",
             subtitleNameToken = HENRY_PREFIX + "SUBTITLE",
 
             characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texHenryIcon"),
@@ -31,9 +31,9 @@ namespace HenryMod.Modules.Survivors
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
-            maxHealth = 110f,
-            healthRegen = 1.5f,
-            armor = 0f,
+            maxHealth = 150f,
+            healthRegen = 5f,
+            armor = 20f,
 
             jumpCount = 1,
         };

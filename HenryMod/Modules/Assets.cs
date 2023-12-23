@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using RoR2.UI;
 using System;
 
-namespace HenryMod.Modules
+namespace ErisMod.Modules
 {
     internal static class Assets
     {
-        #region henry's stuff
+        #region Eris's stuff
         // particle effects
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
@@ -65,7 +65,7 @@ namespace HenryMod.Modules
 
         internal static void LoadSoundbank()
         {
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.HenryBank.bnk"))
+            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.ErisBank.bnk"))
             {
                 byte[] array = new byte[manifestResourceStream2.Length];
                 manifestResourceStream2.Read(array, 0, array.Length);
@@ -84,9 +84,9 @@ namespace HenryMod.Modules
             // feel free to delete everything in here and load in your own assets instead
             // it should work fine even if left as is- even if the assets aren't in the bundle
             
-            swordHitSoundEvent = CreateNetworkSoundEventDef("HenrySwordHit");
+            swordHitSoundEvent = CreateNetworkSoundEventDef("ErisSwordHit");
 
-            bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
+            bombExplosionEffect = LoadEffect("BombExplosionEffect", "ErisBombExplosion");
 
             if (bombExplosionEffect)
             {
@@ -104,8 +104,8 @@ namespace HenryMod.Modules
                 };
             }
 
-            swordSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
-            swordHitImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            swordSwingEffect = Assets.LoadEffect("ErisSwordSwingEffect", true);
+            swordHitImpactEffect = Assets.LoadEffect("ImpactErisSlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)
@@ -170,7 +170,7 @@ namespace HenryMod.Modules
         public static GameObject LoadSurvivorModel(string modelName) {
             GameObject model = mainAssetBundle.LoadAsset<GameObject>(modelName);
             if (model == null) {
-                Log.Error("Trying to load a null model- check to see if the BodyName in your code matches the prefab name of the object in Unity\nFor Example, if your prefab in unity is 'mdlHenry', then your BodyName must be 'Henry'");
+                Log.Error("Trying to load a null model- check to see if the BodyName in your code matches the prefab name of the object in Unity\nFor Example, if your prefab in unity is 'mdlEris', then your BodyName must be 'Eris'");
                 return null;
             }
 
