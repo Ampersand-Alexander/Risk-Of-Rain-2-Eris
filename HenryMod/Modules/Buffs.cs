@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace ErisMod.Modules
 {
     public static class Buffs
     {
@@ -11,7 +11,7 @@ namespace HenryMod.Modules
 
         internal static void RegisterBuffs()
         {
-            armorBuff = AddNewBuff("HenryArmorBuff",
+            armorBuff = AddNewBuff("ErisArmorBuff",
                 LegacyResourcesAPI.Load<BuffDef>("BuffDefs/HiddenInvincibility").iconSprite, 
                 Color.white, 
                 false, 

@@ -3,7 +3,7 @@ using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
 
-namespace HenryMod.SkillStates
+namespace ErisMod.SkillStates
 {
     public class ThrowBomb : GenericProjectileBaseState
     {
@@ -21,7 +21,7 @@ namespace HenryMod.SkillStates
             //base.effectPrefab = Modules.Assets.SomeMuzzleEffect;
             //targetmuzzle = "muzzleThrow"
 
-            base.attackSoundString = "HenryBombThrow";
+            base.attackSoundString = "ErisBombThrow";
             
             base.baseDuration = BaseDuration;
             base.baseDelayBeforeFiringProjectile = BaseDelayDuration;

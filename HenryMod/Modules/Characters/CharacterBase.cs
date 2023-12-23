@@ -116,7 +116,7 @@ namespace ErisMod.Modules.Characters
         public string bodyNameToClone = "Commando";
 
         // the color of your characters name and skills and such in the lobby
-        public Color bodyColor = Color.white;
+        public Color bodyColor = Color.red;
 
         public Texture characterPortrait = null;
 

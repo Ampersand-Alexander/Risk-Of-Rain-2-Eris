@@ -6,9 +6,9 @@ Disclaimer: I've never written tutorials before and am a horrible teacher so thi
 ## Getting Started
 Creating a character is a daunting task. Between modeling, animation, coding, skill icons, sounds, VFX and more there's a whole lot that goes into it. Don't expect it to be an easy process.
 
-The first step would be cloning this repo and opening up `HenryMod.sln` in `Visual Studio`.
+The first step would be cloning this repo and opening up `ErisMod.sln` in `Visual Studio`.
 
-The recommended starting point is skill creation. [This](https://risk-of-thunder.github.io/R2Wiki/Mod-Creation/Assets/Skills/) tutorial is a good place to start, HOWEVER- step 1 goes over adding the skill to a body, which is already streamlined with Henry. I recommend starting from step 2 and working with his existing skills to make what you want.
+The recommended starting point is skill creation. [This](https://risk-of-thunder.github.io/R2Wiki/Mod-Creation/Assets/Skills/) tutorial is a good place to start, HOWEVER- step 1 goes over adding the skill to a body, which is already streamlined with Eris. I recommend starting from step 2 and working with his existing skills to make what you want.
 
 Creating skills is a pretty specific process that involves a lot of hard coding that greatly differs depending on what you want the skill to do, so there's not a whole lot that can be explained here. 3 basic types of attacks, OverlapAttacks (melee), BulletAttacks (hitscan) and Projectiles have been included as examples. 
 
@@ -30,12 +30,12 @@ The recommended method for this is exporting as FBX with these import/export set
 
 You're gonna want Unity version 2019.4.26f1, the one Risk of Rain 2 currently uses. Download [here](https://unity3d.com/get-unity/download/archive)
 
-Once you have this, if you haven't already, grab Henry's Unity project from the repo. This is recommended over creating a new one so that you can use Henry as a reference as well as add several scripts I've included to make things easier.
+Once you have this, if you haven't already, grab Eris's Unity project from the repo. This is recommended over creating a new one so that you can use Eris as a reference as well as add several scripts I've included to make things easier.
 
 Once that's done, follow these steps:
 
   1. Import your model. Drag it into the scene, right click it in the hierarchy and click `Unpack Prefab`. Then rename the `GameObject` to "mdlMyCharacterName", replacing MyCharacterName with your character's name of course. Remember the name you set here.
-  2. Add an `Animator`. I highly recommend copying Henry's animator and pasting your own animations in.
+  2. Add an `Animator`. I highly recommend copying Eris's animator and pasting your own animations in.
   3. Add a `ChildLocator` component to your object.
   4. Add a empty `GameObject` as a child of your object. Call this "MainHurtbox" and add a `Capsule Collider`. Scale it to fit your character and make sure the pivot of the object is set around the center of your character. This determines the `corePosition`, where enemies will aim at and where effects like `Berzerker's Pauldron` will show up.
   5. In your `ChildLocator`, create a new entry called "MainHurtbox" and drag your hurtbox object into it. Once you've done this the code will handle the rest.
@@ -50,11 +50,11 @@ If this was done right, you should be able to navigate to where you built the As
 
 ## Setting up your character prefab in code
 
-Assuming you've cloned Henry for this one, and have a basic understanding of how to navigate a C# project. Before you start, there's a few components that you're gonna be working with that it's important to understand.
+Assuming you've cloned Eris for this one, and have a basic understanding of how to navigate a C# project. Before you start, there's a few components that you're gonna be working with that it's important to understand.
 
 #### CharacterBody
 
-`CharacterBody` is the main component that handles most things relating to a character. This handles things like base stats, crosshairs, item interactions, etc. There's way too many things for me to go over so it's best to learn about this through experience. Henry's code takes care of all of the setup for this when creating your own body so don't stress over it too much.
+`CharacterBody` is the main component that handles most things relating to a character. This handles things like base stats, crosshairs, item interactions, etc. There's way too many things for me to go over so it's best to learn about this through experience. Eris's code takes care of all of the setup for this when creating your own body so don't stress over it too much.
 
 #### HealthComponent
 
@@ -78,7 +78,7 @@ The `InputBank` is used to cache inputs from players as well as fake inputs from
 
 * * *
 
-There's plenty more to go over but these are the main ones you need to know. Reading through the game code with `dnSpy` always helps. Now it's time to move on to Henry's code.
+There's plenty more to go over but these are the main ones you need to know. Reading through the game code with `dnSpy` always helps. Now it's time to move on to Eris's code.
 
 
 ## Step 1 - Initial Setup
@@ -87,24 +87,24 @@ This step is very important in order to avoid conflicts with other mods.
 
 The first thing you wanna do is go through and change the name of the character to your own.  
 
-Open up `HenryPlugin.cs`
+Open up `ErisPlugin.cs`
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step1-1_henryplugin.cs.png)
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step1-1_henryplugin.cs.png)
 
-<ins>Rename the `HenryMod` namespace to a name of you're choosing.</ins> As well, rename the class `HenryPlugin`.  
-In the Solution Explorer, go through and rename every instance of `Henry` to something else.
+<ins>Rename the `ErisMod` namespace to a name of you're choosing.</ins> As well, rename the class `ErisPlugin`.  
+In the Solution Explorer, go through and rename every instance of `Eris` to something else.
 
 If you haven't already, in `Assets.cs`, <ins>make sure you change the `assetbundleName` and `csProjName`</ins> as fits your renamed assetbundle and csproj.  
 
-Back to your renamed `HenryPlugin.cs`, navigate to this section:
+Back to your renamed `ErisPlugin.cs`, navigate to this section:
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step1-2_thissection.png) 
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step1-2_thissection.png) 
 
 Standard naming convention is `com.AuthorName.YourModName` so go ahead and fill in the fields accordingly. For the version, it's good practice to follow [Semantic Versioning](https://semver.org/). This isn't enforced but you'll probably be made fun of if you don't follow it.
 
 Now after this, open up `Tokens.cs`
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step1-3_tokens.png) 
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step1-3_tokens.png) 
 
 Inside this class all our name tokens are stored for organization. Change any of these to your character and skill names and make sure to use the prefixes to avoid mod conflicts.
 
@@ -114,11 +114,11 @@ Inside this class all our name tokens are stored for organization. Change any of
 
 Next you're going to want to create a class for the survivor you're creating. `SurvivorBase` is an abstract class that you can inherit from that takes care of most of the work for you. Included is an example of this, `MyCharacter`.
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step2-1_Mycharacte.png) 
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step2-1_Mycharacte.png) 
 
 Open up this (hopefully renamed) class and you'll see a bunch of fields and information about your character that you need to fill out.
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step2-2_bodyinfo.png) 
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step2-2_bodyinfo.png) 
 
 This code right here is what sets up your entire `CharacterBody` prefab. You can check out the Prefabs module if you're curious to see how it all works, but this `CreatePrefab` method exists to make it pain free. Everything in it is fairly self-explanatory, base stats, crosshair prefab, survivor pod, name tokens...
 
@@ -136,7 +136,7 @@ If this is done properly, you'll now have a functioning character body! However 
 
 This step is crucial if you want your character to look good and authentic ingame. All that `ChildLocator` stuff from before, linking all the meshes, comes into play here.  
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step3-1_model.png) 
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step3-1_model.png) 
 
 Pretty simple, we use `Materials.CreateHopooMaterial` to create materials with Hopoo's shader based on our own materials made in Unity. Make sure the name matches here or it'll error and show up white.  
 To add emission and normal/bump maps, set up all that stuff in editor, and it should seamlessly transfer here.
@@ -193,7 +193,7 @@ After all this only a few things remain to have a truly complete character.
 
 ![](https://cdn.discordapp.com/attachments/469291841859092488/829082643404423182/unknown.png) 
 
-I'll admit it's not the cleanest and there's surely a way I can streamline this further. But from here, if you have a melee hitbox you want to add then you just need to set it up in the `ChildLocator` as you did with all the other things before. Change up some of this code to accommodate your needs and it should be good. See Henry's prefab for an example of what hitboxes are supposed to look like.
+I'll admit it's not the cleanest and there's surely a way I can streamline this further. But from here, if you have a melee hitbox you want to add then you just need to set it up in the `ChildLocator` as you did with all the other things before. Change up some of this code to accommodate your needs and it should be good. See Eris's prefab for an example of what hitboxes are supposed to look like.
 
 `InitializeSkills` method contains all the code for setting up your character's `SkillDefs`. It should be fairly self-explanatory and easy to work with.
 
@@ -226,7 +226,7 @@ If you don't have any skins, you don't need to worry about this section. A basic
 
 Skin creation isn't streamlined as much as I'd like but it's not too bad to work with as of now. Inside the `InitializeSkins` method, you'll see this code:
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step5-1_Skins.png)  
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step5-1_Skins.png)  
 
 Most of it can be ignored. It's just grabbing the necessary components and adding the `ModelSkinController` as well as creating a `List` of our `SkinDefs`. The rest of the skin code is below.  
 
@@ -241,9 +241,9 @@ Thankfully `KingEnderBrine` has made a tool that streamlines this process to an 
 [ItemDisplayPlacementHelper](https://thunderstore.io/package/KingEnderBrine/ItemDisplayPlacementHelper/)
 
 The code responsible for setting it up can be found up near your bodyInfo and customRendererInfos:  
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step6-1_itemdisplays.png)  
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step6-1_itemdisplays.png)  
 All of the initialization is handled for you. If you don't want displays yet, simply set that to null.  
-Go into the `HenryItemDisplays` class and all the items rules have been written, so all you need to do is install that tool, run the game, press `F2` on the main menu, select your character and start dragging items around.
+Go into the `ErisItemDisplays` class and all the items rules have been written, so all you need to do is install that tool, run the game, press `F2` on the main menu, select your character and start dragging items around.
 
 Seriously, this section would've been a lot longer without that tool.
 
@@ -262,7 +262,7 @@ I'll elaborate on this more sometime but unlockables are basically just hooking 
 
 There exists a `GenericModdedUnlockable` class and a `BaseMasteryUnlockable` class you can inherit from to slightly more easily create your unlocks. 
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step8-1_unlocks.png)  
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step8-1_unlocks.png)  
 *making a mastery achievement literally couldn't be any easier!*
 
 There's plenty of examples of this in most of my repos, so I recommend checking those out, namely Enforcer and Miner. One thing to note is that certain things like on kill achievements must be server tracked, otherwise only the host can unlock them. Keep an eye out for some examples on that.
@@ -283,6 +283,6 @@ It's wonderful to just hit ctrl+b and run the game and your mod is magically the
 In Visual Studio, find your project in the solution explorer, right click > Properties  
 You'll see a screen something like this:  
 
-![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/HenryTutorialImages/Step9-1_extra.png)    
+![](https://raw.githubusercontent.com/TheTimeSweeper/the/master/Ass/ErisTutorialImages/Step9-1_extra.png)    
 An example has been set up for you here  
 You can also use a similar copy command in Pre-build events to copy your assetbundle to your project, so you don't have to drag and replace it every time you make a change in unity.
