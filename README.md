@@ -1,6 +1,6 @@
 # Overview
 
-This is a character mod for risk of rain featuring Eris from Jobless Reincarnation. This project is currently in development.
+This is a character mod for risk of rain 2 featuring Eris from Jobless Reincarnation. This project is currently in development.
 
 ![Eris](https://github.com/Ampersand-Alexander/Risk-Of-Rain-2-Eris/assets/60246286/888b3cd5-f36f-4163-a096-019db9847562)
 
